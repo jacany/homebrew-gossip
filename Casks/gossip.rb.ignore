@@ -1,0 +1,25 @@
+cask "gossip" do
+  arch arm: "arm64", intel: "x86_64"
+  version "0.7.0"
+  sha256 arm: "7553cfa9cc521dabc76917f3e5866ac3a502886aded09f517079b544f09cc71e",
+         intel: "511ce16e8bb9a8335889c100205b304a780ba004af4599980f9ebabfa1300b98"
+
+  url "https://github.com/mikedilger/gossip/releases/download/v#{version}/gossip-#{version}-Darwin-#{arch}.dmg"
+  name "gossip"
+  desc "gossip nostr client, rust, egui based."
+  homepage "https://github.com/mikedilger/gossip"
+  
+  livecheck do
+    url "https://github.com/mikedilger/gossip/releases"
+  end
+  
+  auto_updates false
+
+  app "Gossip.app"
+  
+  uninstall quit: "com.mikedilger.gossip"
+  
+  zap trash: [
+    "~/Library/Application Support/gossip"
+  ]
+end
