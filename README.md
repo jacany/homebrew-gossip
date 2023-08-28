@@ -1,11 +1,25 @@
-# Jacany Gossip
+# Jack's Gossip Tap
 
-## How do I install these formulae?
+## How do I install Gossip?
+First add this tap
+```bash
+brew tap jacany/gossip
+```
 
-`brew install jacany/gossip/<formula>`
+Then type the install command, note that this will install all dependencies needed to build gossip from the latest release.
+```bash
+brew install gossip
+```
+If you want to build from master, then run
+```bash
+brew install --HEAD gossip
+```
 
-Or `brew tap jacany/gossip` and then `brew install <formula>`.
 
-## Documentation
+You can also pass flags to this command to enable or disable different features
+To disable video in case it's giving problems, run `brew install --without-video gossip`.
+You can disable the Chinese, Japanese, and Korean language packs by also adding `--without-cjk`
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+
+## Support
+If you are unable to build gossip with the install command, open an issue inside this repository.
